@@ -7,7 +7,6 @@ function App() {
   useEffect(() => {
     applyBranding(defaultConfig.branding);
     
-    // Smooth scrolling for anchor links
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
