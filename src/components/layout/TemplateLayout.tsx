@@ -1,14 +1,11 @@
 import { motion } from 'framer-motion';
 import { BrandingConfig } from '../../config';
 import { 
-  Home, 
-  User, 
   Phone, 
   Mail, 
   MapPin, 
   Star, 
   Target, 
-  Handshake,
   Rocket,
   Lightbulb,
   Wrench,
@@ -21,19 +18,7 @@ import {
 export default function TemplateLayout({ branding, modules }: { branding: BrandingConfig; modules: string[] }) {
   console.log('Rendering with modules:', modules);
   
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
-  };
-
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
+  // Animation variants removed to fix TypeScript errors
 
   return (
     <div className="min-h-screen bg-white font-sans" style={{ fontFamily: branding.fontFamily }}>
@@ -157,10 +142,10 @@ export default function TemplateLayout({ branding, modules }: { branding: Brandi
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div 
               className="text-center mb-20"
-              variants={fadeInUp}
-              initial="initial"
-              whileInView="animate"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
               <h2 className="text-5xl font-bold text-gray-900 mb-6">About Us</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -169,14 +154,15 @@ export default function TemplateLayout({ branding, modules }: { branding: Brandi
             </motion.div>
             <motion.div 
               className="grid md:grid-cols-3 gap-12"
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.8, staggerChildren: 0.1 }}
             >
               <motion.div 
                 className="text-center group"
-                variants={fadeInUp}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -10 }}
                 transition={{ duration: 0.3 }}
               >
@@ -188,7 +174,8 @@ export default function TemplateLayout({ branding, modules }: { branding: Brandi
               </motion.div>
               <motion.div 
                 className="text-center group"
-                variants={fadeInUp}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -10 }}
                 transition={{ duration: 0.3 }}
               >
@@ -200,12 +187,13 @@ export default function TemplateLayout({ branding, modules }: { branding: Brandi
               </motion.div>
               <motion.div 
                 className="text-center group"
-                variants={fadeInUp}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -10 }}
                 transition={{ duration: 0.3 }}
               >
                 <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Handshake className="text-white text-3xl" />
+                  <Star className="text-white text-3xl" />
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Partnership</h3>
                 <p className="text-gray-600 leading-relaxed">We work closely with our clients to understand their needs and deliver personalized solutions.</p>
@@ -227,10 +215,10 @@ export default function TemplateLayout({ branding, modules }: { branding: Brandi
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-20"
-            variants={fadeInUp}
-            initial="initial"
-            whileInView="animate"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
             <h2 className="text-5xl font-bold text-gray-900 mb-6">Our Services</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -239,14 +227,15 @@ export default function TemplateLayout({ branding, modules }: { branding: Brandi
           </motion.div>
           <motion.div 
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.8, staggerChildren: 0.1 }}
           >
             <motion.div 
               className="bg-white p-8 rounded-xl shadow-lg border border-gray-200 group hover:shadow-2xl transition-all duration-300"
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -10, scale: 1.02 }}
             >
               <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -257,7 +246,8 @@ export default function TemplateLayout({ branding, modules }: { branding: Brandi
             </motion.div>
             <motion.div 
               className="bg-white p-8 rounded-xl shadow-lg border border-gray-200 group hover:shadow-2xl transition-all duration-300"
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -10, scale: 1.02 }}
             >
               <div className="w-16 h-16 bg-accent rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -268,7 +258,8 @@ export default function TemplateLayout({ branding, modules }: { branding: Brandi
             </motion.div>
             <motion.div 
               className="bg-white p-8 rounded-xl shadow-lg border border-gray-200 group hover:shadow-2xl transition-all duration-300"
-              variants={fadeInUp}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -10, scale: 1.02 }}
             >
               <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -294,10 +285,10 @@ export default function TemplateLayout({ branding, modules }: { branding: Brandi
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div 
               className="text-center mb-20"
-              variants={fadeInUp}
-              initial="initial"
-              whileInView="animate"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
               <h2 className="text-5xl font-bold text-gray-900 mb-6">Contact Us</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -306,12 +297,16 @@ export default function TemplateLayout({ branding, modules }: { branding: Brandi
             </motion.div>
             <motion.div 
               className="grid md:grid-cols-2 gap-16"
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.8, staggerChildren: 0.1 }}
             >
-              <motion.div variants={fadeInUp}>
+              <motion.div 
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
                 <h3 className="text-3xl font-semibold mb-8">Get In Touch</h3>
                 <div className="space-y-6">
                   <motion.div 
@@ -355,7 +350,11 @@ export default function TemplateLayout({ branding, modules }: { branding: Brandi
                   </motion.div>
                 </div>
               </motion.div>
-              <motion.div variants={fadeInUp}>
+              <motion.div 
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
                 <form className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
@@ -405,18 +404,26 @@ export default function TemplateLayout({ branding, modules }: { branding: Brandi
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div 
               className="grid md:grid-cols-4 gap-12"
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.8, staggerChildren: 0.1 }}
             >
-              <motion.div variants={fadeInUp}>
+              <motion.div 
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
                 <h3 className="text-2xl font-bold mb-6">{branding.businessName}</h3>
                 <p className="text-gray-400 leading-relaxed">
                   Professional services delivered with excellence and care.
                 </p>
               </motion.div>
-              <motion.div variants={fadeInUp}>
+              <motion.div 
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
                 <h4 className="font-semibold mb-6 text-lg">Services</h4>
                 <ul className="space-y-3 text-gray-400">
                   <li><a href="#" className="hover:text-white transition-colors duration-300">Service 1</a></li>
@@ -424,7 +431,11 @@ export default function TemplateLayout({ branding, modules }: { branding: Brandi
                   <li><a href="#" className="hover:text-white transition-colors duration-300">Service 3</a></li>
                 </ul>
               </motion.div>
-              <motion.div variants={fadeInUp}>
+              <motion.div 
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
                 <h4 className="font-semibold mb-6 text-lg">Company</h4>
                 <ul className="space-y-3 text-gray-400">
                   <li><a href="#about" className="hover:text-white transition-colors duration-300">About</a></li>
@@ -432,7 +443,11 @@ export default function TemplateLayout({ branding, modules }: { branding: Brandi
                   <li><a href="#" className="hover:text-white transition-colors duration-300">Privacy Policy</a></li>
                 </ul>
               </motion.div>
-              <motion.div variants={fadeInUp}>
+              <motion.div 
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
                 <h4 className="font-semibold mb-6 text-lg">Connect</h4>
                 <div className="flex space-x-4">
                   <motion.a 
@@ -472,10 +487,10 @@ export default function TemplateLayout({ branding, modules }: { branding: Brandi
             </motion.div>
             <motion.div 
               className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
-              variants={fadeInUp}
-              initial="initial"
-              whileInView="animate"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
               <p>&copy; 2024 Johns Hotdogs. All rights reserved.</p>
             </motion.div>
