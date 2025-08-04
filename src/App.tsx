@@ -23,6 +23,9 @@ function App() {
     return () => document.removeEventListener('click', handleAnchorClick);
   }, []);
 
+  // Force Vercel rebuild - updated template version
+  console.log('Template updated:', new Date().toISOString());
+
   return (
     <AnimatePresence mode="wait">
       <motion.div
