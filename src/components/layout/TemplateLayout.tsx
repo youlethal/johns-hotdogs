@@ -1,6 +1,21 @@
 import { motion } from 'framer-motion';
 import { BrandingConfig } from '../../config';
-// TemplateLayout component removed - this should be in a separate file
+import { 
+  Phone, 
+  Mail, 
+  MapPin, 
+  Star, 
+  Target, 
+  Rocket,
+  Lightbulb,
+  Wrench,
+  Facebook,
+  Instagram,
+  Twitter,
+  Linkedin
+} from 'lucide-react';
+
+export default function TemplateLayout({ branding, modules }: { branding: BrandingConfig; modules: string[] }) {
   return (
     <div className="min-h-screen bg-white font-sans" style={{ fontFamily: branding.fontFamily }}>
       {/* Header */}
@@ -26,14 +41,6 @@ import { BrandingConfig } from '../../config';
                 whileTap={{ scale: 0.95 }}
               >
                 Home
-              </motion.a>
-              <motion.a 
-                href="#about" 
-                className="text-gray-700 hover:text-primary transition-colors duration-300"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                About
               </motion.a>
               <motion.a 
                 href="#services" 
@@ -81,7 +88,7 @@ import { BrandingConfig } from '../../config';
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Professional services delivered with excellence and care. We're here to serve you with the highest quality and dedication.
+              Professional services delivered with excellence and care.
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-6 justify-center"
@@ -96,14 +103,6 @@ import { BrandingConfig } from '../../config';
                 whileTap={{ scale: 0.95 }}
               >
                 Get Started
-              </motion.a>
-              <motion.a 
-                href="#about" 
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Learn More
               </motion.a>
             </motion.div>
           </div>
@@ -129,7 +128,7 @@ import { BrandingConfig } from '../../config';
           >
             <h2 className="text-5xl font-bold text-gray-900 mb-6">Our Services</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              We offer a comprehensive range of services designed to meet your needs and exceed your expectations.
+              We offer a comprehensive range of services designed to meet your needs.
             </p>
           </motion.div>
           <motion.div 
@@ -149,7 +148,7 @@ import { BrandingConfig } from '../../config';
                 <Rocket className="text-white text-2xl" />
               </div>
               <h3 className="text-2xl font-semibold mb-4">Service 1</h3>
-              <p className="text-gray-600 leading-relaxed">Professional service delivered with expertise and attention to detail.</p>
+              <p className="text-gray-600 leading-relaxed">Professional service delivered with expertise.</p>
             </motion.div>
             <motion.div 
               className="bg-white p-8 rounded-xl shadow-lg border border-gray-200 group hover:shadow-2xl transition-all duration-300"
@@ -161,7 +160,7 @@ import { BrandingConfig } from '../../config';
                 <Lightbulb className="text-white text-2xl" />
               </div>
               <h3 className="text-2xl font-semibold mb-4">Service 2</h3>
-              <p className="text-gray-600 leading-relaxed">Innovative solutions tailored to your specific requirements and goals.</p>
+              <p className="text-gray-600 leading-relaxed">Innovative solutions tailored to your needs.</p>
             </motion.div>
             <motion.div 
               className="bg-white p-8 rounded-xl shadow-lg border border-gray-200 group hover:shadow-2xl transition-all duration-300"
@@ -173,7 +172,7 @@ import { BrandingConfig } from '../../config';
                 <Wrench className="text-white text-2xl" />
               </div>
               <h3 className="text-2xl font-semibold mb-4">Service 3</h3>
-              <p className="text-gray-600 leading-relaxed">Comprehensive support and maintenance to ensure long-term success.</p>
+              <p className="text-gray-600 leading-relaxed">Comprehensive support and maintenance.</p>
             </motion.div>
           </motion.div>
         </div>
@@ -199,7 +198,7 @@ import { BrandingConfig } from '../../config';
             >
               <h2 className="text-5xl font-bold text-gray-900 mb-6">Contact Us</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Ready to get started? Get in touch with us today and let's discuss how we can help you achieve your goals.
+                Ready to get started? Get in touch with us today.
               </p>
             </motion.div>
             <motion.div 
@@ -345,7 +344,6 @@ import { BrandingConfig } from '../../config';
               >
                 <h4 className="font-semibold mb-6 text-lg">Company</h4>
                 <ul className="space-y-3 text-gray-400">
-                  <li><a href="#about" className="hover:text-white transition-colors duration-300">About</a></li>
                   <li><a href="#contact" className="hover:text-white transition-colors duration-300">Contact</a></li>
                   <li><a href="#" className="hover:text-white transition-colors duration-300">Privacy Policy</a></li>
                 </ul>
