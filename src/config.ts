@@ -9,11 +9,11 @@ export interface BrandingConfig {
 export const defaultConfig = {
   branding: {
     businessName: "Johns Hotdogs",
-    primaryColor: "#3B82F6",
-    accentColor: "#10B981",
+    primaryColor: "#ffed24",
+    accentColor: "#ff0a0a",
     fontFamily: "Inter, sans-serif"
   },
-  modules: ["hero", "about", "contact", "footer"],
+  modules: ["booking","gallery"],
   darkMode: false
 };
 
