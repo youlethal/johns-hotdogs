@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #3B82F6;
-  --accent-color: #10B981;
-  --font-family: 'Inter', sans-serif;
+  --primary-color: #ffed24;
+  --accent-color: #ff0a0a;
+  --font-family: 'Inter, sans-serif';
 }
+
+.text-primary { color: var(--primary-color); }
+.bg-primary { background-color: var(--primary-color); }
+.text-accent { color: var(--accent-color); }
+.bg-accent { background-color: var(--accent-color); }
