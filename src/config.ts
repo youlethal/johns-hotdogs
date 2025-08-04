@@ -1,6 +1,5 @@
 export interface BrandingConfig {
   businessName: string;
-  logoUrl?: string;
   primaryColor: string;
   accentColor: string;
   fontFamily: string;
