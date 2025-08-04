@@ -1,25 +1,6 @@
 import { motion } from 'framer-motion';
 import { BrandingConfig } from '../../config';
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Star, 
-  Target, 
-  Rocket,
-  Lightbulb,
-  Wrench,
-  Facebook,
-  Instagram,
-  Twitter,
-  Linkedin
-} from 'lucide-react';
-
-export default function TemplateLayout({ branding, modules }: { branding: BrandingConfig; modules: string[] }) {
-  console.log('Rendering with modules:', modules);
-  
-  // Animation variants removed to fix TypeScript errors
-
+// TemplateLayout component removed - this should be in a separate file
   return (
     <div className="min-h-screen bg-white font-sans" style={{ fontFamily: branding.fontFamily }}>
       {/* Header */}
@@ -124,80 +105,6 @@ export default function TemplateLayout({ branding, modules }: { branding: Brandi
               >
                 Learn More
               </motion.a>
-            </motion.div>
-          </div>
-        </motion.section>
-      )}
-
-      {/* About Section */}
-      {modules.includes('about') && (
-        <motion.section 
-          id="about" 
-          className="py-24 bg-gray-50"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div 
-              className="text-center mb-20"
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-5xl font-bold text-gray-900 mb-6">About Us</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                We are dedicated to providing exceptional service and creating lasting relationships with our clients.
-              </p>
-            </motion.div>
-            <motion.div 
-              className="grid md:grid-cols-3 gap-12"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, staggerChildren: 0.1 }}
-            >
-              <motion.div 
-                className="text-center group"
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Target className="text-white text-3xl" />
-                </div>
-                <h3 className="text-2xl font-semibold mb-4">Our Mission</h3>
-                <p className="text-gray-600 leading-relaxed">To deliver outstanding results that exceed expectations and build trust with every interaction.</p>
-              </motion.div>
-              <motion.div 
-                className="text-center group"
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Star className="text-white text-3xl" />
-                </div>
-                <h3 className="text-2xl font-semibold mb-4">Quality</h3>
-                <p className="text-gray-600 leading-relaxed">We maintain the highest standards in everything we do, ensuring excellence in every project.</p>
-              </motion.div>
-              <motion.div 
-                className="text-center group"
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Star className="text-white text-3xl" />
-                </div>
-                <h3 className="text-2xl font-semibold mb-4">Partnership</h3>
-                <p className="text-gray-600 leading-relaxed">We work closely with our clients to understand their needs and deliver personalized solutions.</p>
-              </motion.div>
             </motion.div>
           </div>
         </motion.section>
